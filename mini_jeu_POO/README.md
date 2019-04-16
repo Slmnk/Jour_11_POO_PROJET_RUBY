@@ -5,3 +5,5 @@ app.rb - Combat automatique entre deux bots.
 app_2.rb - Combat contre deux bots en tant que joueur.
 
 app_3.rb - Combat contre de multiples ennemis en tant que joueur.
+
+Kise SHARY
