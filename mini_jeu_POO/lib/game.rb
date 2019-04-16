@@ -7,10 +7,10 @@ class Game
 # Define enemies and the playable character of the USer
   def initialize (humanplayer)
     @humanplayer = HumanPlayer.new("#{humanplayer}",100,1)
-    @player_1 = Player.new("Melee creep", 10)
-    @player_2 = Player.new("Ranged creep", 10)
-    @player_3 = Player.new("Siege creep", 10)
-    @player_4 = Player.new("Mega creep", 10)
+    @player_1 = Player.new("Niama Guerrier de Feu", 10)
+    @player_2 = Player.new("Niama Archer de Glace", 10)
+    @player_3 = Player.new("Niama Maître de la Terre", 10)
+    @player_4 = Player.new("Niama Moche et Méchant", 10)
     @ennemies = [@player_1, @player_2, @player_3, @player_4]
   end
 
@@ -19,7 +19,7 @@ class Game
      |player|
     if (player.life_points <= 0)
       @ennemies.delete(player)
-      puts "#{player.name} is dead"
+      puts "#{player.name} est mort."
     end
     }
   end
@@ -36,20 +36,20 @@ class Game
   def show_players
     puts
     @humanplayer.show_state
-    puts "2) #{@ennemies.size} enemies are still fighting"
+    puts "2) #{@ennemies.size} combattent encore."
     puts
   end
 
 # Displays selection menu
   def menu
     command = 1
-    puts "what do you want to do ?"
-    puts "a - Look for a better weapon"
-    puts "s - Heal yourself"
+    puts "Que voulez-vous faire?"
+    puts "a - Je veux chercher une meilleure arme!"
+    puts "s - J'ai besoin de me soigner!"
     puts
-    puts "Attack an enemy on sight :"
+    puts "Attaquer un ennemi à portée:"
     @ennemies.each {
-    |player| puts "#{command} - #{player.name} has #{player.life_points} hp"
+    |player| puts "#{command} - #{player.name} a #{player.life_points} points de vie."
     command += 1
      }
 
@@ -69,14 +69,14 @@ class Game
       @humanplayer.attack(@player_3)
         elsif action == "4"
       @humanplayer.attack(@player_4)
-        else puts "Please select option a, s, 1, 2, 3 or 4"
+    else puts "Choisir a, s, 1, 2, 3 ou 4"
     end
 
       kill_player
   end
 
   def enemies_attack
-    puts "Wild cat empire attack !"
+    puts "Les Niamas fous attaquent!!"
       @ennemies.each {
       |player| player.attack(@humanplayer)
         }
@@ -85,12 +85,12 @@ class Game
 # Game over screen
   def end
     if humanplayer.life_points > 0
-      puts "Winner winner chicken dinner !"
+      puts "Incroyable! Tu es un Champion Niama!"
     elsif humanplayer.life_points < 0
-      puts "Take this L n00b"
+      puts "Meurs en enfer, sous-être!"
     end
   puts
-  puts "G A M E  O V E R"
+  puts "Too bad."
   puts
   end
 end

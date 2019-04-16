@@ -5,9 +5,9 @@ require_relative 'lib/game'
 require_relative 'lib/player'
 
 puts "------------------------------------------------
-|Bienvenue sur 'Le Survivant des Niamas 3' !      |
-|Le but du jeu est d'être le dernier niama en vie.|
--------------------------------------------------"
+      |Bienvenue sur 'Le Survivant des Niamas 2' !      |
+      |Le but du jeu est d'être le dernier niama en vie.|
+      -------------------------------------------------"
 
 puts "WazZZZUuuPPP'' BROOouuhHHH,, WHATSSss URr NaaaMEEeeeeeE? "
 print ">"
